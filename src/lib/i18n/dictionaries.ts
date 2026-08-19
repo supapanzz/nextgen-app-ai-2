@@ -1,0 +1,223 @@
+export const locales = ["th", "en"] as const;
+export type Locale = (typeof locales)[number];
+export const defaultLocale: Locale = "th";
+
+export const dictionaries = {
+  th: {
+    common: {
+      home: "หน้าหลัก",
+      products: "สินค้า",
+      courses: "หลักสูตร",
+      about: "เกี่ยวกับเรา",
+      contact: "ติดต่อเรา",
+      login: "เข้าสู่ระบบ",
+      signup: "สมัครสมาชิก",
+      logout: "ออกจากระบบ",
+      cart: "ตะกร้า",
+      items: "ชิ้น",
+      hello: "สวัสดี",
+      backHome: "กลับหน้าหลัก",
+      addToCart: "เพิ่มลงตะกร้า",
+      buyNow: "สั่งซื้อเลย",
+      viewAll: "ดูทั้งหมด",
+    },
+    hero: {
+      badge: "ตลาดงานฝีมือของคนไทย",
+      title: "ช้อปสินค้าแฮนด์เมด เรื่องเล่าจากช่างฝีมือ",
+      subtitle:
+        "ทุกชิ้นงานมาจากช่างฝีมือและชุมชนท้องถิ่น คัดสรรด้วยความใส่ใจ พร้อมเรื่องราวที่แท้จริงของเจ้าของผลงาน",
+      ctaPrimary: "เริ่มช้อปเลย",
+      ctaSecondary: "ดูสินค้าแนะนำ",
+      statMakers: "ช่างฝีมือ",
+      statProducts: "สินค้า",
+      statStories: "เรื่องราว",
+      statCommunity: "ชุมชน",
+    },
+    products: {
+      title: "สินค้าทั้งหมด",
+      subtitle: "สินค้าแฮนด์เมดจากช่างฝีมือทั่วไทย",
+      name: "ชื่อสินค้า",
+      price: "ราคา",
+      id: "รหัส",
+      empty: "ยังไม่มีสินค้าในขณะนี้",
+      handmade: "แฮนด์เมด",
+      addToCart: "หยิบใส่ตะกร้า",
+      viewDetail: "ดูรายละเอียด",
+      inStock: "มีในสต็อก",
+      quantity: "จำนวน",
+      total: "รวม",
+    },
+    cart: {
+      title: "ตะกร้าสินค้า",
+      empty: "ตะกร้าสินค้าของคุณว่างเปล่า",
+      emptyHint: "เริ่มช้อปสินค้าแฮนด์เมดจากช่างฝีมือกันเลย",
+      productId: "รหัสสินค้า",
+      productName: "ชื่อสินค้า",
+      price: "ราคา",
+      qty: "จำนวน",
+      subtotal: "รวม",
+      actions: "เครื่องมือ",
+      remove: "ลบ",
+      clearAll: "ลบสินค้าทั้งหมด",
+      checkout: "ยืนยันการสั่งซื้อ",
+      total: "รวมทั้งหมด",
+      continueShopping: "เลือกซื้อสินค้าต่อ",
+    },
+    about: {
+      title: "เกี่ยวกับเรา",
+      subtitle: "รู้จักกับ MarketNest ชุมชนตลาดงานฝีมือ",
+      missionTitle: "พันธกิจของเรา",
+      mission:
+        "เราเชื่อว่าทุกชิ้นงานมีเรื่องราว เรารวมช่างฝีมือและชุมชนท้องถิ่นเข้าด้วยกัน เพื่อให้สินค้าแฮนด์เมดคุณภาพดีเข้าถึงผู้คนได้มากขึ้น",
+      values: [
+        {
+          title: "ความโปร่งใส",
+          desc: "เปิดเผยที่มา แหล่งผลิต และช่างฝีมืออย่างชัดเจน",
+        },
+        {
+          title: "ความจริงแท้",
+          desc: "ทุกชิ้นงานผลิตด้วยมือ ด้วยกระบวนการจริง ไม่ใช่สินค้าเลียนแบบ",
+        },
+        {
+          title: "ชุมชน",
+          desc: "สร้างรายได้ที่ยั่งยืนให้กับช่างฝีมือและชุมชนท้องถิ่น",
+        },
+      ],
+      apiVersion: "เวอร์ชัน API",
+    },
+    contact: {
+      title: "ติดต่อเรา",
+      subtitle: "สอบถามข้อมูลเพิ่มเติมหรือติดต่อทีมงาน",
+      address: "ที่อยู่",
+      addressValue: "123 ถนนตัวอย่าง แขวงบางรัก เขตบางรัก กรุงเทพมหานคร 10500",
+      email: "อีเมล",
+      phone: "โทรศัพท์",
+      hours: "เวลาทำการ",
+      hoursValue: "จันทร์ - ศุกร์ 09:00 - 18:00 น.",
+      follow: "ติดตามเรา",
+    },
+    course: {
+      title: "หลักสูตรทั้งหมด",
+      subtitle: "บทเรียนและความรู้จากช่างฝีมือมืออาชีพ",
+    },
+    footer: {
+      tagline:
+        "ตลาดสินค้าแฮนด์เมด ที่ซึ่งทุกชิ้นงานมีเรื่องราวและทุกการซื้อช่วยส่งเสริมช่างฝีมือไทย",
+      shop: "ร้านค้า",
+      company: "บริษัท",
+      resources: "แหล่งข้อมูล",
+      rights: "สงวนลิขสิทธิ์",
+    },
+    language: {
+      th: "ไทย",
+      en: "English",
+    },
+  },
+  en: {
+    common: {
+      home: "Home",
+      products: "Products",
+      courses: "Courses",
+      about: "About",
+      contact: "Contact",
+      login: "Sign in",
+      signup: "Sign up",
+      logout: "Log out",
+      cart: "Cart",
+      items: "items",
+      hello: "Hello",
+      backHome: "Back to home",
+      addToCart: "Add to cart",
+      buyNow: "Buy now",
+      viewAll: "View all",
+    },
+    hero: {
+      badge: "Thailand's handmade marketplace",
+      title: "Shop handmade goods with stories behind every maker",
+      subtitle:
+        "Every piece comes from local artisans and communities, carefully curated with the real story of the maker behind it",
+      ctaPrimary: "Start shopping",
+      ctaSecondary: "See featured products",
+      statMakers: "Artisans",
+      statProducts: "Products",
+      statStories: "Stories",
+      statCommunity: "Community",
+    },
+    products: {
+      title: "All products",
+      subtitle: "Handmade goods from artisans across Thailand",
+      name: "Product name",
+      price: "Price",
+      id: "ID",
+      empty: "No products available right now",
+      handmade: "Handmade",
+      addToCart: "Add to basket",
+      viewDetail: "View details",
+      inStock: "In stock",
+      quantity: "Quantity",
+      total: "Total",
+    },
+    cart: {
+      title: "Shopping cart",
+      empty: "Your shopping cart is empty",
+      emptyHint: "Start shopping for handmade goods from local artisans",
+      productId: "Product ID",
+      productName: "Product name",
+      price: "Price",
+      qty: "Qty",
+      subtotal: "Subtotal",
+      actions: "Actions",
+      remove: "Remove",
+      clearAll: "Clear all",
+      checkout: "Confirm order",
+      total: "Total",
+      continueShopping: "Continue shopping",
+    },
+    about: {
+      title: "About us",
+      subtitle: "Meet MarketNest, the artisan marketplace community",
+      missionTitle: "Our mission",
+      mission:
+        "We believe every piece has a story. We bring artisans and local communities together so quality handmade goods reach more people",
+      values: [
+        { title: "Transparency", desc: "Open about origin, process, and the makers" },
+        { title: "Authenticity", desc: "Every piece is truly handmade, never imitated" },
+        { title: "Community", desc: "Sustainable income for artisans and communities" },
+      ],
+      apiVersion: "API version",
+    },
+    contact: {
+      title: "Contact us",
+      subtitle: "Ask us anything or reach our team",
+      address: "Address",
+      addressValue: "123 Example Road, Bang Rak, Bangkok 10500",
+      email: "Email",
+      phone: "Phone",
+      hours: "Business hours",
+      hoursValue: "Mon - Fri 09:00 - 18:00",
+      follow: "Follow us",
+    },
+    course: {
+      title: "All courses",
+      subtitle: "Lessons and knowledge from professional artisans",
+    },
+    footer: {
+      tagline:
+        "A handmade marketplace where every piece has a story and every purchase supports Thai artisans",
+      shop: "Shop",
+      company: "Company",
+      resources: "Resources",
+      rights: "All rights reserved",
+    },
+    language: {
+      th: "ไทย",
+      en: "English",
+    },
+  },
+} as const;
+
+export type Dict = (typeof dictionaries)["th"];
+
+export function getDictionary(locale: Locale): Dict {
+  return dictionaries[locale];
+}
