@@ -9,12 +9,17 @@ export const instant = false;
 // http://localhost:3000/product
 export default async function ProductPage() {
   await connection(); // signals this is a dynamic route
-  const products = await prisma.product.findMany();
+  const products = await prisma.product.findMany({
+    include: {
+      product_images: true,
+    },
+  });
   
-  // แปลง Decimal → number ก่อนส่งให้ Client Component
+  // แปลง Decimal → number และดึงรูปภาพหลัก
   const serializedProducts = products.map((p) => ({
     ...p,
-    price: Number(p.price), // Decimal → number
+    price: Number(p.price),
+    picture: p.product_images[0]?.image_name || "placeholder.jpg",
   }))
 
   return (

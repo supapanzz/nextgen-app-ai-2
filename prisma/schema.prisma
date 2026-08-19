@@ -1,4 +1,3 @@
-
 generator client {
   provider = "prisma-client"
   output   = "../generated/prisma"
@@ -8,72 +7,78 @@ datasource db {
   provider = "mysql"
 }
 
-model product {
-  id      Int     @id @default(autoincrement())
-  name    String  @db.VarChar(100)
-  price   Decimal @db.Decimal(10, 0)
-  picture String  @db.VarChar(150)
+model Product {
+  id             Int              @id @unique(map: "id") @default(autoincrement())
+  name           String?          @db.VarChar(255)
+  description    String?          @db.Text
+  price          Float?
+  category_id    Int?
+  order_items    OrderItem[]
+  product_images ProductImage[]
+  categories     Category?      @relation(fields: [category_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "products_ibfk_1")
+
+  @@index([category_id], map: "category_id")
+  @@map("products")
 }
 
-model User {
-  id            String    @id
-  name          String    @db.Text
-  email         String
-  emailVerified Boolean   @default(false)
-  image         String?   @db.Text
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-  sessions      Session[]
-  accounts      Account[]
+model Category {
+  id       Int       @id @unique(map: "id") @default(autoincrement())
+  name     String?   @db.VarChar(255)
+  products Product[]
 
-  @@unique([email])
-  @@map("user")
+  @@map("categories")
 }
 
-model Session {
-  id        String   @id
-  expiresAt DateTime
-  token     String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  ipAddress String?  @db.Text
-  userAgent String?  @db.Text
-  userId    String
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+model Customer {
+  id      Int      @id @unique(map: "id") @default(autoincrement())
+  name    String?  @db.VarChar(255)
+  address String?  @db.VarChar(500)
+  phone   String?  @db.VarChar(20)
+  orders  Order[]
 
-  @@unique([token])
-  @@index([userId(length: 191)])
-  @@map("session")
+  @@map("customers")
 }
 
-model Account {
-  id                    String    @id
-  accountId             String    @db.Text
-  providerId            String    @db.Text
-  userId                String
-  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
-  accessToken           String?   @db.Text
-  refreshToken          String?   @db.Text
-  idToken               String?   @db.Text
-  accessTokenExpiresAt  DateTime?
-  refreshTokenExpiresAt DateTime?
-  scope                 String?   @db.Text
-  password              String?   @db.Text
-  createdAt             DateTime  @default(now())
-  updatedAt             DateTime  @updatedAt
+model OrderItem {
+  id         Int     @id @unique(map: "id") @default(autoincrement())
+  order_id   Int
+  product_id Int
+  quantity   Int
+  price      Float
+  orders     Order   @relation(fields: [order_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "order_items_ibfk_1")
+  products   Product @relation(fields: [product_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "order_items_ibfk_2")
 
-  @@index([userId(length: 191)])
-  @@map("account")
+  @@index([order_id], map: "order_id")
+  @@index([product_id], map: "product_id")
+  @@map("order_items")
 }
 
-model Verification {
-  id         String   @id
-  identifier String   @db.Text
-  value      String   @db.Text
-  expiresAt  DateTime
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
+model Order {
+  id           Int            @id @unique(map: "id") @default(autoincrement())
+  date         DateTime?      @db.DateTime(0)
+  customer_id  Int?
+  status       OrderStatus?
+  total_amount Float?
+  order_items  OrderItem[]
+  customers    Customer?     @relation(fields: [customer_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "orders_ibfk_1")
 
-  @@index([identifier(length: 191)])
-  @@map("verification")
+  @@index([customer_id], map: "customer_id")
+  @@map("orders")
+}
+
+model ProductImage {
+  id         Int       @id @unique(map: "id") @default(autoincrement())
+  product_id Int
+  image_name String    @db.Text
+  created_at DateTime? @default(now()) @db.Timestamp(0)
+  products   Product   @relation(fields: [product_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "product_images_ibfk_1")
+
+  @@index([product_id], map: "product_id")
+  @@map("product_images")
+}
+
+enum OrderStatus {
+  delivered
+  received
+  processing
 }

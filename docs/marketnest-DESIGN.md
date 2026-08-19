@@ -1,4 +1,4 @@
-# MarketNest
+# BubyShop
 
 Warm, community-driven, handmade feel.
 
@@ -52,7 +52,7 @@ Buby is a design system for IT goods and artisan marketplaces where every produc
 
 ## Elevation
 
-MarketNest follows a flat design philosophy with no shadows. Depth is achieved through warm background layering and deliberate border usage.
+BubyShop follows a flat design philosophy with no shadows. Depth is achieved through warm background layering and deliberate border usage.
 - **Subtle:** none — Use `border: 1px #E7E5E4` instead
 - **Medium:** none — Use `border: 1px #D6D3D1` with `bg: #FFFBF5` layering
 - **Large:** none — Use `border: 2px #D6D3D1` for elevated importance
