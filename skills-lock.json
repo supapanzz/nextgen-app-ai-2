@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "git-commit-guide": {
+      "source": "codingthailand/my-agent-skill-nt",
+      "sourceType": "github",
+      "skillPath": "skills/git-commit-guide/SKILL.md",
+      "computedHash": "88f0ed32096098023f647be68d8656b2d53c44746694ba0c4cc6e92aa842a425"
+    },
+    "vercel-react-best-practices": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/react-best-practices/SKILL.md",
+      "computedHash": "ca7b0c0c6e5f2750043f7f0cd72d16ac4e2abc48f9b5500d047a4b77a2506212"
+    }
+  }
+}
