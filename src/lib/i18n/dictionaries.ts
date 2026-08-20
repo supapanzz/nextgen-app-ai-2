@@ -91,10 +91,54 @@ export const dictionaries = {
       address: "ที่อยู่",
       addressValue: "123 ถนนตัวอย่าง แขวงบางรัก เขตบางรัก กรุงเทพมหานคร 10500",
       email: "อีเมล",
+      emailValue: "contact@marketnest.co",
       phone: "โทรศัพท์",
+      phoneValue: "02-123-4567",
       hours: "เวลาทำการ",
       hoursValue: "จันทร์ - ศุกร์ 09:00 - 18:00 น.",
       follow: "ติดตามเรา",
+      sendMessage: "ส่งข้อความถึงเรา",
+      sendMessageHint:
+        "กรอกแบบฟอร์มด้านล่าง ทีมงานจะติดต่อกลับภายใน 1 - 2 วันทำการ",
+      form: {
+        name: "ชื่อ",
+        email: "อีเมล",
+        subject: "หัวข้อ",
+        message: "ข้อความ",
+        messagePlaceholder: "พิมพ์ข้อความของคุณ...",
+        submit: "ส่งข้อความ",
+        submitting: "กำลังส่ง...",
+        success: "ส่งข้อความสำเร็จ ขอบคุณที่ติดต่อเรา เราจะตอบกลับโดยเร็วที่สุด",
+        error: "เกิดข้อผิดพลาดในการส่งข้อความ กรุณาลองใหม่อีกครั้ง",
+        validationError: "กรุณาตรวจสอบข้อมูลในแบบฟอร์มอีกครั้ง",
+        nameInvalid: "ชื่อต้องมีความยาว 2-100 ตัวอักษร",
+        emailInvalid: "รูปแบบอีเมลไม่ถูกต้อง",
+        subjectInvalid: "หัวข้อต้องมีความยาว 3-150 ตัวอักษร",
+        messageInvalid: "ข้อความต้องมีความยาว 10-2000 ตัวอักษร",
+      },
+      socials: [
+        { label: "Facebook", href: "https://facebook.com/marketnest" },
+        { label: "Instagram", href: "https://instagram.com/marketnest" },
+        { label: "Twitter", href: "https://twitter.com/marketnest" },
+      ],
+      faq: [
+        {
+          q: "ใช้เวลานานเท่าไหร่ในการตอบกลับ?",
+          a: "เราจะตอบกลับภายใน 1-2 วันทำการ ผ่านทางอีเมลที่คุณระบุไว้",
+        },
+        {
+          q: "ฉันสามารถติดต่อทางโทรศัพท์ได้หรือไม่?",
+          a: "ได้ เราพร้อมให้บริการทางโทรศัพท์ในเวลาทำการ จันทร์-ศุกร์ 09:00-18:00 น.",
+        },
+        {
+          q: "ฉันสามารถสอบถามเกี่ยวกับคำสั่งซื้อได้ไหม?",
+          a: "ได้ กรุณาระบุเลขคำสั่งซื้อในหัวข้อและรายละเอียดข้อความ",
+        },
+        {
+          q: "ข้อมูลของฉันถูกเก็บเป็นความลับหรือไม่?",
+          a: "เราใช้ข้อมูลของคุณเพื่อตอบกลับข้อความเท่านั้น และจะไม่นำไปใช้เพื่อวัตถุประสงค์อื่น",
+        },
+      ],
     },
     course: {
       title: "หลักสูตรทั้งหมด",
@@ -192,10 +236,55 @@ export const dictionaries = {
       address: "Address",
       addressValue: "123 Example Road, Bang Rak, Bangkok 10500",
       email: "Email",
+      emailValue: "contact@marketnest.co",
       phone: "Phone",
+      phoneValue: "02-123-4567",
       hours: "Business hours",
       hoursValue: "Mon - Fri 09:00 - 18:00",
       follow: "Follow us",
+      sendMessage: "Send us a message",
+      sendMessageHint:
+        "Fill in the form below and our team will get back to you within 1-2 business days",
+      form: {
+        name: "Name",
+        email: "Email",
+        subject: "Subject",
+        message: "Message",
+        messagePlaceholder: "Type your message...",
+        submit: "Send message",
+        submitting: "Sending...",
+        success:
+          "Your message has been sent. Thank you for contacting us, we will reply shortly.",
+        error: "Something went wrong while sending your message. Please try again.",
+        validationError: "Please review the form and try again.",
+        nameInvalid: "Name must be between 2 and 100 characters",
+        emailInvalid: "Please enter a valid email address",
+        subjectInvalid: "Subject must be between 3 and 150 characters",
+        messageInvalid: "Message must be between 10 and 2000 characters",
+      },
+      socials: [
+        { label: "Facebook", href: "https://facebook.com/marketnest" },
+        { label: "Instagram", href: "https://instagram.com/marketnest" },
+        { label: "Twitter", href: "https://twitter.com/marketnest" },
+      ],
+      faq: [
+        {
+          q: "How long does it take to get a reply?",
+          a: "We reply within 1-2 business days via the email address you provide.",
+        },
+        {
+          q: "Can I reach you by phone?",
+          a: "Yes, we are available by phone during business hours, Mon-Fri 09:00-18:00.",
+        },
+        {
+          q: "Can I ask about my order?",
+          a: "Of course. Please include your order number in the subject and message.",
+        },
+        {
+          q: "Is my information kept private?",
+          a: "We only use your details to respond to your message and never share them.",
+        },
+      ],
     },
     course: {
       title: "All courses",
@@ -219,5 +308,5 @@ export const dictionaries = {
 export type Dict = (typeof dictionaries)["th"];
 
 export function getDictionary(locale: Locale): Dict {
-  return dictionaries[locale];
+  return dictionaries[locale] as Dict;
 }

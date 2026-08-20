@@ -1,3 +1,5 @@
+import type { Locale } from "./dictionaries";
+
 export { LocaleProvider, useDict, useLocale } from "./locale-provider";
 export { defaultLocale, dictionaries, getDictionary } from "./dictionaries";
 export type { Dict, Locale } from "./dictionaries";

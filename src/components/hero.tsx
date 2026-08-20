@@ -11,7 +11,7 @@ const stats = [
   { key: "statProducts", value: "1,500+" },
   { key: "statStories", value: "860" },
   { key: "statCommunity", value: "24" },
-];
+] as const;
 
 export default function Hero() {
   const t = useDict();

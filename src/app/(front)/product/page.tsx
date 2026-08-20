@@ -15,11 +15,26 @@ export default async function ProductPage() {
     },
   });
   
-  // แปลง Decimal → number และดึงรูปภาพหลัก
+  const availableImages = [
+    "airpods-pro.png",
+    "galaxy-s24.png",
+    "ipad-air.png",
+    "macbook-air.png",
+  ];
+
+  const getMatchedImage = (name: string | null, dbImage: string | null) => {
+    const searchStr = `${name || ""} ${dbImage || ""}`.toLowerCase();
+    if (searchStr.includes("airpod")) return "airpods-pro.png";
+    if (searchStr.includes("galaxy") || searchStr.includes("s24")) return "galaxy-s24.png";
+    if (searchStr.includes("ipad")) return "ipad-air.png";
+    if (searchStr.includes("macbook")) return "macbook-air.png";
+    return "placeholder.jpg"; // Default to placeholder image
+  };
+
   const serializedProducts = products.map((p) => ({
     ...p,
     price: Number(p.price),
-    picture: p.product_images[0]?.image_name || "placeholder.jpg",
+    picture: getMatchedImage(p.name, p.product_images[0]?.image_name),
   }))
 
   return (
