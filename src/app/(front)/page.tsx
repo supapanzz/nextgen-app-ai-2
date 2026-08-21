@@ -5,6 +5,7 @@ import CtaBanner from "@/components/cta-banner";
 // See: https://nextjs.org/docs/app/guides/migrating-to-cache-components
 export const instant = false;
 
+
 // http://localhost:3000/
 export default function Home() {
   return (

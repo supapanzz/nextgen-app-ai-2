@@ -3,10 +3,13 @@ import "dotenv/config"
 import { PrismaMariaDb } from "@prisma/adapter-mariadb"
 import { PrismaClient } from "../../generated/prisma/client"
 
-const adapter = new PrismaMariaDb(process.env.DATABASE_URL!)
+const adapter = process.env.DATABASE_URL ? new PrismaMariaDb(process.env.DATABASE_URL) : undefined;
 
 const prismaClientSingleton = () => {
-  return new PrismaClient({ adapter })
+  if (adapter) {
+    return new PrismaClient({ adapter })
+  }
+  return new PrismaClient({ adapter: undefined as any })
 }
 
 declare global {

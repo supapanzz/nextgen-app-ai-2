@@ -12,6 +12,7 @@ import "../globals.css";
 // See: https://nextjs.org/docs/app/guides/migrating-to-cache-components
 export const instant = false;
 
+
 const lora = Lora({
   subsets: ["latin"],
   variable: "--font-heading",

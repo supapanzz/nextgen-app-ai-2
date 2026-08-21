@@ -4,6 +4,7 @@ import CartList from "../components/CartList";
 // See: https://nextjs.org/docs/app/guides/migrating-to-cache-components
 export const instant = false;
 
+
 export default function CartPage() {
   return (
     <>

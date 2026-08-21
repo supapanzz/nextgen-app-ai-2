@@ -6,6 +6,7 @@ import { connection } from "next/server";
 // See: https://nextjs.org/docs/app/guides/migrating-to-cache-components
 export const instant = false;
 
+
 // http://localhost:3000/product
 export default async function ProductPage() {
   await connection(); // signals this is a dynamic route
