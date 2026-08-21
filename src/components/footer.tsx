@@ -90,7 +90,7 @@ const Footer = async () => {
       <div className="border-t border-border">
         <div className="mx-auto flex max-w-(--breakpoint-xl) flex-col items-center justify-between gap-2 px-4 py-6 text-center text-xs text-muted-foreground sm:flex-row sm:px-6 lg:px-8">
           <p>
-            © {new Date().getFullYear()} MarketNest. {t.footer.rights}.
+            © {new Date().getFullYear()} Buby. {t.footer.rights}.
           </p>
           <p className="font-mono">marketnest.co</p>
         </div>

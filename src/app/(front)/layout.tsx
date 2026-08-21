@@ -36,7 +36,7 @@ const mono = Source_Code_Pro({
 });
 
 export const metadata: Metadata = {
-  title: "MarketNest",
+  title: "Buby",
   description: "ตลาดสินค้าแฮนด์เมด / Handmade artisan marketplace",
 };
 
