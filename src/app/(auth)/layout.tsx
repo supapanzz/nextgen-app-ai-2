@@ -33,7 +33,7 @@ const mono = Source_Code_Pro({
 });
 
 export const metadata: Metadata = {
-  title: "MarketNest - Auth",
+  title: "Buby - Auth",
   description: "เข้าสู่ระบบ / Sign in",
 };
 

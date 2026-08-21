@@ -86,7 +86,7 @@ export default function Hero() {
                   {t.products.handmade}
                 </p>
                 <p className="font-heading text-sm font-semibold">
-                  MarketNest
+                  Buby
                 </p>
               </div>
               <span className="font-mono text-xs text-primary">

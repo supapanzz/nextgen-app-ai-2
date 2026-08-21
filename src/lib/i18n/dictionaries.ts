@@ -65,7 +65,7 @@ export const dictionaries = {
     },
     about: {
       title: "เกี่ยวกับเรา",
-      subtitle: "รู้จักกับ MarketNest ชุมชนตลาดงานฝีมือ",
+      subtitle: "รู้จักกับ Buby ชุมชนตลาดงานฝีมือ",
       missionTitle: "พันธกิจของเรา",
       mission:
         "เราเชื่อว่าทุกชิ้นงานมีเรื่องราว เรารวมช่างฝีมือและชุมชนท้องถิ่นเข้าด้วยกัน เพื่อให้สินค้าแฮนด์เมดคุณภาพดีเข้าถึงผู้คนได้มากขึ้น",
@@ -219,7 +219,7 @@ export const dictionaries = {
     },
     about: {
       title: "About us",
-      subtitle: "Meet MarketNest, the artisan marketplace community",
+      subtitle: "Meet Buby, the artisan marketplace community",
       missionTitle: "Our mission",
       mission:
         "We believe every piece has a story. We bring artisans and local communities together so quality handmade goods reach more people",
